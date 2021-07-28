@@ -1,6 +1,12 @@
 # カーソルにくっついていくマスクの効いたポインター
 
+
+demo. 
 https://yuki-sakaguchi.github.io/animation-mask-cursor/
+
+
+![result](https://user-images.githubusercontent.com/16290220/127345188-f618ef81-c095-4f6e-af36-49c3e818f5cc.gif)
+
 
 # 説明
 
