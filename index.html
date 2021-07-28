@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation mask cursor.</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      .section {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-areas: "box";
+        grid-template-columns: 1fr;
+        height: 100%;
+      }
+      .box {
+        grid-area: box;
+      }
+      .base {
+
+      }
+      .skelton {
+        --loupeScale: 1;
+        --loupeX: 0;
+        --loupeY: 0;
+        clip-path: circle(calc(8rem * var(--loupeScale)) at calc(var(--loupeX) * 1px) calc(var(--loupeY) * 1px));
+        pointer-events: none;
+      }
+      .skelton::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #5c146e;
+      }
+      .thumb {
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+      }
+      .title {
+        font-size: 3rem;
+        text-align: center;
+      }
+      .skelton .title {
+        color: white;
+      }
+      .opa {
+        opacity: 0.5;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </head>
+  <body>
+    <section class="section">
+      <div class="box base js-target">
+        <img class="thumb" src="assets/images/base.jpg" alt="">
+        <h2 class="title">天使</h2>
+      </div>
+      <div class="box skelton js-skelton">
+        <img class="thumb opa" src="assets/images/skelton.jpg" alt="">
+        <h2 class="title opa">悪魔</h2>
+      </div>
+    </section>
+  </body>
+</html>
